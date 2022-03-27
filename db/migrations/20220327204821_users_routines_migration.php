@@ -22,8 +22,6 @@ final class UsersRoutinesMigration extends AbstractMigration
                 'delete' => 'NO_ACTION',
                 'update' =>'NO_ACTION'
               ])
-              ->addColumn('created', 'datetime')
-              ->addColumn('modified', 'datetime', ['null' => true])
               ->create();
     }
 }
