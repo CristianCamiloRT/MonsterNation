@@ -18,6 +18,7 @@ class UsersController extends AppController
      */
     public function index()
     {
+        $this->viewBuilder()->setLayout('dashboard');
         $this->paginate = [
             'contain' => ['Roles'],
         ];
