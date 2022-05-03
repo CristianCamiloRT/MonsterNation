@@ -49,10 +49,26 @@
                      <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-users yellow_color"></i> <span>Usuarios</span></a>
                      <ul class="collapse list-unstyled" id="dashboard">
                         <li>
-                           <a href="dashboard.html">> <span>Crear Usuario</span></a>
+                           <?= $this->Html->link(__('> <span>Usuarios</span>'),
+                              [
+                                 'controller' => 'Users',
+                                 'action' => 'index'
+                              ],
+                              [
+                                 'escape' => false
+                              ])
+                           ?>
                         </li>
                         <li>
-                           <a href="dashboard_2.html">> <span>Usuarios</span></a>
+                           <?= $this->Html->link(__('> <span>Crear Usuario</span>'),
+                              [
+                                 'controller' => 'Users',
+                                 'action' => 'add'
+                              ],
+                              [
+                                 'escape' => false
+                              ])
+                           ?>
                         </li>
                      </ul>
                   </li>

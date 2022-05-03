@@ -384,7 +384,7 @@
         margin-top: 25px;
         margin-bottom: 25px;
     }
-    .login_form form .field input {
+    .login_form form .field input, .login_form form .field select {
         max-width: 395px;
         width: 100%;
     }

@@ -2945,7 +2945,12 @@ ul.inbox-pagination li {
 
 .table-hover tbody tr:hover,
 .table-hover tbody tr:focus {
-    background-color: #1ed085 !important;
+    background-color: #ff5722 !important;
+    color: #fff;
+}
+
+.table-hover tbody tr:hover a,
+.table-hover tbody tr:focus a {
     color: #fff;
 }
 
@@ -3330,7 +3335,7 @@ table.projects tr td:first-child {
     margin: 0 0 20px;
 }
 
-.login_form form .field input {
+.login_form form .field input, .login_form form .field select {
     border-top: none;
     border-left: none;
     border-right: none;
@@ -3406,7 +3411,23 @@ table.projects tr td:first-child {
     background-color: #fff;
 }
 
+.table .thead-mn th {
+    color: white;
+    background-color: #214162;
+    border-color: #dee2e6;
+}
 
+.table .thead-mn th a {
+    color: white;
+}
+  
+.float-ini {
+    float: initial !important;
+}
+
+.w-auto {
+    width: auto !important;
+}
 /*------------------------------------------------------------------
     27. Map
 -------------------------------------------------------------------*/

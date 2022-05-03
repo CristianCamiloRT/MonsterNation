@@ -1,41 +1,99 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\User $user
- * @var string[]|\Cake\Collection\CollectionInterface $roles
- * @var string[]|\Cake\Collection\CollectionInterface $routines
- */
-?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $user->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $user->id), 'class' => 'side-nav-item']
-            ) ?>
-            <?= $this->Html->link(__('List Users'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+<div class="row column_title">
+    <div class="col-md-12">
+        <div class="page_title">
+            <h2><?= __('Editar Usuario') ?></h2>
         </div>
-    </aside>
-    <div class="column-responsive column-80">
-        <div class="users form content">
-            <?= $this->Form->create($user) ?>
-            <fieldset>
-                <legend><?= __('Edit User') ?></legend>
-                <?php
-                    echo $this->Form->control('identification');
-                    echo $this->Form->control('name');
-                    echo $this->Form->control('last_name');
-                    echo $this->Form->control('email');
-                    echo $this->Form->control('password');
-                    echo $this->Form->control('active');
-                    echo $this->Form->control('role_id', ['options' => $roles]);
-                    echo $this->Form->control('routines._ids', ['options' => $routines]);
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
+    </div>
+</div>
+<?= $this->Flash->render() ?>
+<div class="row">
+    <div class="col-md-12">
+        <div class="white_shd full margin_bottom_30">
+            <div class="table_section padding_infor_info login_form">
+                <?= $this->Form->create($user) ?>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="field">
+                                <?=
+                                    $this->Form->control('name', [
+                                        'class' => 'float-ini',
+                                        'placeholder' => 'Nombres',
+                                        'label' => ''
+                                    ]);
+                                ?>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="field">
+                                <?=
+                                    $this->Form->control('last_name', [
+                                        'class' => 'float-ini',
+                                        'placeholder' => 'Apellidos',
+                                        'label' => ''
+                                    ]);
+                                ?>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="field">
+                                <?=
+                                    $this->Form->control('identification', [
+                                        'class' => 'float-ini',
+                                        'placeholder' => 'Número de documento',
+                                        'label' => ''
+                                    ]);
+                                ?>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="field">
+                                <?=
+                                    $this->Form->control('email', [
+                                        'class' => 'float-ini',
+                                        'placeholder' => 'Correo',
+                                        'label' => ''
+                                    ]);
+                                ?>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="field">
+                                <?=
+                                    $this->Form->control('password', [
+                                        'class' => 'float-ini',
+                                        'placeholder' => 'Contraseña',
+                                        'label' => ''
+                                    ]);
+                                ?>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="field">
+                                <?=
+                                    $this->Form->control('role_id', [
+                                        'options' => $roles,
+                                        'class' => 'float-ini',
+                                        'label' => ''
+                                    ]);
+                                ?>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="field">
+                                <?=
+                                    $this->Form->control('active', [
+                                        'class' => 'float-ini w-auto mr-3 mb-1',
+                                        'label' => 'Usuario Activo'
+                                    ]);
+                                ?>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <?= $this->Form->button(__('Crear'), ['class' => 'main_bt']) ?>
+                        </div>
+                    </div>
+                <?= $this->Form->end() ?>
+            </div>
         </div>
     </div>
 </div>
