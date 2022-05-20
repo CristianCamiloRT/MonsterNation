@@ -43,7 +43,7 @@
                                     <td><?= h($user->last_name) ?></td>
                                     <td><?= h($user->email) ?></td>
                                     <td><?= h($user->active) ? 'Si' : 'No' ?></td>
-                                    <td><?= $user->has('role') ? $this->Html->link($user->role->role, ['controller' => 'Roles', 'action' => 'view', $user->role->id]) : '' ?></td>
+                                    <td><?= h($user->role->role) ?></td>
                                     <td class="actions">
                                         <?= $this->Html->link(__('<button type="button" class="btn btn-success m-b-10 m-l-5 fa fa-eye"></button>'),
                                             [
