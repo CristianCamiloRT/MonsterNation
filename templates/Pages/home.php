@@ -1,66 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8" http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src="MaterialGrafico/img_logo.png" class="w-50 d-block d-md-none"></a>
+        <a class="navbar-brand" href="#"><img src="MaterialGrafico/img_logo.png" class="w-100 d-none d-md-block"></a>
 
-    <title>Monster Nation</title>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <?= $this->Html->css(['Index']) ?>
-
-    <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
-</head>
-
-<body>
-    <header>
-        <div class="container">
-            <p class="logo">LogoMN</p>
-            <nav>
-                <a href="#">Sedes</a>
-                <a href="#">Planes</a>
-                <a href="./users">Monster</a>
-                <a href="#">Contactos</a>
-            </nav>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Quienes Somos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sedes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Planes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./users">Monster</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contactos</a>
+                </li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-            <img class="d-block w-100" src="..." alt="First slide">
+                <!-- <img class="d-block w-100" src="..." alt="First slide"> -->
+                <video muted autoplay loop>
+                    <source src="MaterialGrafico/Vid_banner3.mp4" type="video/mp4">
+                </video>
             </div>
-            <div class="carousel-item">
-            <img class="d-block w-100" src="..." alt="Second slide">
-            </div>
-            <div class="carousel-item">
-            <img class="d-block w-100" src="..." alt="Third slide">
+            <div>
+                <p>SOMOS MONSTER NATION</p>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
     </div>
 
     <section id="somosMonster">
         <div class="container">
             <div class="img-container"></div>
             <h2>Somos Monster Nation</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim ut molestiae suscipit quibusdam maiores
-                ipsa deleniti, obcaecati aspernatur voluptatem quod, aliquid doloribus saepe optio quae asperiores
-                necessitatibus ea molestias numquam!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim ut molestiae suscipit quibusdam maiores ipsa deleniti, obcaecati aspernatur voluptatem quod, aliquid doloribus saepe optio quae asperiores necessitatibus ea molestias numquam!</p>
         </div>
     </section>
 
@@ -73,27 +59,20 @@
 
                 <div class="carta">
                     <h3>Entrenamiento Oso</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque consectetur cum laborum ipsum
-                        beatae ad earum fugit voluptate unde, necessitatibus ex ducimus deserunt numquam ratione rem
-                        minus ut dolore maiores.</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque consectetur cum laborum ipsum beatae ad earum fugit voluptate unde, necessitatibus ex ducimus deserunt numquam ratione rem minus ut dolore maiores.</p>
                     <button>+info</button>
                 </div>
 
                 <div class="carta">
                     <h3>Entrenamiento Pantera</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque consectetur cum laborum ipsum
-                        beatae ad earum fugit voluptate unde, necessitatibus ex ducimus deserunt numquam ratione rem
-                        minus ut dolore maiores.</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque consectetur cum laborum ipsum beatae ad earum fugit voluptate unde, necessitatibus ex ducimus deserunt numquam ratione rem minus ut dolore maiores.</p>
                     <button>+info</button>
                 </div>
 
 
                 <div class="carta">
                     <h3>Entrenamiento Gorilla</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque consectetur cum laborum ipsum
-                        beatae
-                        ad earum fugit voluptate unde, necessitatibus ex ducimus deserunt numquam ratione rem minus ut
-                        dolore maiores.</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque consectetur cum laborum ipsum beatae ad earum fugit voluptate unde, necessitatibus ex ducimus deserunt numquam ratione rem minus ut dolore maiores.</p>
                     <button>+info</button>
                 </div>
 
@@ -114,7 +93,7 @@
 
     </section>
 
-    <footer>
+
         <footer class="footer">
             <div class="grupo-1">
                 <div class="box">
@@ -144,12 +123,4 @@
             </div>
         </footer>
 
-    </footer>
 
-
-
-
-
-</body>
-
-</html>
