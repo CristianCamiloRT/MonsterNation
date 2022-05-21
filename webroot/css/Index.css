@@ -1,82 +1,92 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
 
-body{
-
-margin: 0;
-background-color:gainsboro;
-
+body {
+    margin: 0;
+    background-color: gainsboro;
 }
 
-h1{font-size: 3.5em;}
-h2{font-size: 2.7em;}
-h3{font-size: 2em;}
-p{font-size: 1.25em;}
-ul{list-style: none;}
+h1 {
+    font-size: 3.5em;
+}
 
+h2 {
+    font-size: 2.7em;
+}
 
-button{
+h3 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1.25em;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
     font-size: 1.5em;
     font-weight: bold;
     padding: 10px 20px;
     border-radius: 10px;
-    border: 1px solid rgba(0,0,0,0.5);
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     color: white;
     background-color: black;
 }
 
-button:hover{
+button:hover {
     background-color: rgb(82, 81, 81);
 }
 
+.color-acento{ color:rgb(240, 140, 9); }
 
-.container{
-max-width: 1400px;
-margin: auto;
+
+.container {
+    max-width: 1400px;
+    margin: auto;
 }
 
-header{
-    background-color: ghostwhite;
+header {
+    background-color: rgb(2, 34, 94);
 }
 
-
-header .logo{
-margin:0;
-padding: 25px 30px;
-font-weight: bold;
-color: black;
-font-size: 1.6em;
+header .logo {
+    margin: 0;
+    padding: 25px 30px;
+    font-weight: bold;
+    color: black;
+    font-size: 1.6em;
 }
 
-header .container{
-display: flex;
-flex-direction: column;
-align-items: center
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center
 }
 
-
-header nav{
-display: flex;
-flex-direction: column;
-text-align: center;
-padding-bottom: 25px;
+header nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
 }
 
-
-header a{
-padding: 5px 12px;
-text-decoration: none;
-font-weight: bold;
-color:black;
+header a {
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
 }
 
-header a:hover{
-    color:rgb(0, 0, 0);
+header a:hover {
+    color: rgb(0, 0, 0);
 }
 
 #hero {
@@ -86,12 +96,11 @@ header a:hover{
     overflow: hidden;
 }
 
-video{
+video {
     width: 100%;
 }
 
-
-.banner{
+.banner {
     width: 100%;
     height: 100%;
     top: 0;
@@ -103,15 +112,15 @@ video{
     align-items: center;
 }
 
-#hero h1{
+#hero h1 {
     font-size: 80px;
     font-weight: 900px;
-    color:white;
+    color: white;
     z-index: 100;
     margin-bottom: 30px;
 }
 
-h1::after{
+h1::after {
     display: block;
     width: 30%;
     height: 10px;
@@ -120,128 +129,270 @@ h1::after{
     background: white;
 }
 
-.overlay{
+.overlay {
     width: 100%;
     height: 100%;
     position: absolute;
-    background: rgba(0, 0, 0, 0.555);
-
+    background: rgb(0, 0, 0);
 }
 
-#somosMonster .container{
+#somosMonster .container {
     text-align: center;
-    padding: 200px 12px; 
+    padding: 200px 12px;
 }
 
-#nuestros-programas{
-background-color: black ;
-color: white;
-text-align: center;
+
+/*Programas*/
+
+#nuestros-programas {
+    background-color: rgb(51, 48, 48);
+    color: white;
+    text-align: center;
 }
 
-#nuestros-programas .container{
-    padding: 100px 12px;
+#nuestros-programas .container {
+    padding: 150px 12px;
 }
 
-#nuestros-programas h2{
+#nuestros-programas h2 {
     margin-top: 0;
     font-size: 3.2em;
 }
 
-#nuestros-programas p{
+#nuestros-programas p {
     display: none;
 }
 
-#nuestros-programas .carta{
+#nuestros-programas .carta {
+    border-color: white;
+    border: solid;
+    background-color: #201e1e;
     background-position: center center;
     background-size: cover;
-    padding: 50px 0px;
-    margin: 30px;
+    padding: 0px 3px;
+    margin-inline: 2%;
+    /* margin: 30px; */
     border-radius: 15px;
 }
 
-.carta:first-child{
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("MaterialGrafico/img-mot.jpg");
 
+/*Sedes*/
+
+#sedes {
+
+    background-color: rgb(14, 14, 14);
+    color: white;
+    text-align: center;
 }
 
-.carta:nth-child(2){
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("MaterialGrafico/img-mot.jpg");
+#sedes .container {
+    padding: 100px 12px;
 }
 
-.carta:nth-child(3){
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("MaterialGrafico/img-mot.jpg");
-
+#sedes h2 {
+    margin-top: 0;
+    font-size: 3.2em;
 }
 
-#aplicaya{
+.card {
+    min-width: 330px;
+    width: 60%;
+    margin: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    transition: all 400ms ease-out;
+    cursor: default;
+    top: 10%;
+}
+
+.card:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+}
+
+.card img {
+    width: 100%;
+    height: 210px;
+}
+
+.card .contenido-card {
+    padding: 15px;
+    text-align: center;
+}
+
+.card .contenido-card h2 {
+    margin-bottom: 15px;
+    color: #7a7a7a;
+}
+
+.card .contenido-card h3 {
+    margin-bottom: 10px;
+    color: #7a7a7a;
+}
+
+.card .contenido-card p {
+    line-height: 1.8;
+    color: #6a6a6a;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.card .contenido-card a {
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    transition: all 400ms ease;
+    margin-bottom: 5px;
+}
+
+.card .contenido-card a:hover {
+    background: #000000;
+    color: #fff;
+}
+
+
+
+/*Ventana emergente*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    left: 0;
+    top: 200px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.452);
+}
+
+.contenido-modal {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    width: 30%;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .4);
+    animation-name: modal;
+    animation-duration: 1s;
+}
+
+@keyframes modal {
+    from {
+        top: -330px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.close {
+    color: #f2f2f2;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.close:hover {
+    color: #7f8c8d;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header,
+.footer {
+    padding: 8px 16px;
+    background: #34495e;
+    color: #f2f2f2;
+}
+
+p {
+    text-align: justify;
+}
+
+.body-planes {
+    padding: 20px 16px;
+}
+
+@media screen and (max-width:900px) {
+    .contenido-modal {
+        width: 70%;
+    }
+    .textos {
+        padding: 150px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .textos {
+        padding: 50px;
+    }
+}
+
+#aplicaya {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(30,30,30);
+    background-color: rgb(29, 29, 29);
     color: white;
     height: 80vh;
 }
 
-#aplicaya h2{
+#aplicaya h2 {
     font-size: 5vw;
 }
 
-#aplicaya button{
+#aplicaya button {
     font-size: 3vw;
 }
 
-
-.footer{
+.footer {
     width: 100%;
     background-color: #0a141d;
 }
-.footer .grupo-1{
+
+.footer .grupo-1 {
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    display:grid;
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap:50px;
+    grid-gap: 50px;
     padding: 45px 0px;
 }
-.footer .grupo-1 .box figure{
+
+.footer .grupo-1 .box figure {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.footer .grupo-1 .box figure img{
+
+.footer .grupo-1 .box figure img {
     width: 250px;
 }
-.footer .grupo-1 .box h2{
+
+.footer .grupo-1 .box h2 {
     color: #fff;
     margin-bottom: 25px;
     font-size: 20px;
 }
-.footer .grupo-1 .box p{
+
+.footer .grupo-1 .box p {
     color: #efefef;
     margin-bottom: 10px;
 }
-.footer .grupo-1 .red-social a{
+
+.footer .grupo-1 .red-social a {
     display: inline-block;
     text-decoration: none;
     width: 45px;
@@ -253,51 +404,44 @@ text-align: center;
     text-align: center;
     transition: all 300ms ease;
 }
-.footer .grupo-1 .red-social a:hover{
+
+.footer .grupo-1 .red-social a:hover {
     color: aqua;
 }
-.footer .grupo-2{
+
+.footer .grupo-2 {
     background-color: #0a1a2a;
     padding: 15px 10px;
     text-align: center;
     color: #fff;
 }
-.footer .grupo-2 small{
+
+.footer .grupo-2 small {
     font-size: 15px;
 }
 
-
-
-@media (min-width: 850px){
-
-
-    header{
+@media (min-width: 850px) {
+    header {
         position: fixed;
         width: 100%;
     }
-
-    header .container{
+    header .container {
         flex-direction: row;
         justify-content: space-between;
     }
-
-    header nav{
+    header nav {
         flex-direction: row;
         padding-bottom: 0;
         padding-right: 20px;
     }
-
-
-    #hero h1{
+    #hero h1 {
         font-size: 5em;
     }
-
-    #somosMonster .container{
+    #somosMonster .container {
         display: flex;
         justify-content: space-evenly;
     }
-
-    #somosMonster .texto{
+    #somosMonster .texto {
         width: 50%;
         max-width: 600px;
         text-align: initial;
@@ -306,84 +450,66 @@ text-align: center;
         flex-direction: column;
         justify-content: center;
     }
-
-    #somosMonster h2{
+    #somosMonster h2 {
         margin-top: 0px;
     }
+    .container-card {
+        flex-wrap: wrap;
+    }
+    .card {
+        margin: 15px;
+    }
+    #somosMonster .img-container{
+        background-image: url("../MaterialGrafico/Img_imagenlogo.png");
+        background-size: cover;
+        background-position: center center;
+        height: 500px;
+        width: 500px; 
+    }
 
-    #nuestros-programas .programas{
+    #nuestros-programas .programas {
         display: flex;
         justify-content: center;
     }
-
-    #nuestros-programas p{
+    #nuestros-programas p {
         display: block;
         margin-bottom: 30px;
     }
-
-    #nuestros-programas h2{
+    #nuestros-programas h2 {
         font-size: 4em;
     }
-
-    #nuestros-programas h3{
+    #nuestros-programas h3 {
         margin-top: 0;
     }
-
-    #nuestros-programas .carta{
-        padding: 50px;
-        background-size: 100% 150px;
-        background-repeat: no-repeat;
-        background-position-y: 0;
-        background-color: rgba(50, 50, 50, 1);
-        box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    .contenido-modal {
+        width: 100%;
     }
-
-    .carta:first-child{
-        background-image: linear-gradient(
-            0deg,
-            rgba(0,0,0,0.5),
-            rgba(0,0,0,0.5)
-        )
-        ,url("MaterialGrafico/img-mot.jpg");
-
-    }
-
-    .carta:nth-child(2){
-        background-image: linear-gradient(
-            0deg,
-            rgba(0,0,0,0.5),
-            rgba(0,0,0,0.5)
-        )
-        ,url("MaterialGrafico/img-mot.jpg");
-    }
-
-    .carta:nth-child(3){
-        background-image: linear-gradient(
-            0deg,
-            rgba(0,0,0,0.5),
-            rgba(0,0,0,0.5)
-        )
-        ,url("MaterialGrafico/img-mot.jpg");
-
-    }
-
-    #aplicaya h2{
+    #aplicaya h2 {
         font-size: 5em;
     }
-
-    #final button{
+    #final button {
         font-size: 2em;
     }
 }
 
-
-@media screen and (max-width:850px){
-
-    .footer .grupo-1{
+@media screen and (max-width:850px) {
+    .footer .grupo-1 {
         width: 90%;
         grid-template-columns: repeat(1, 1fr);
-        grid-gap:30px;
+        grid-gap: 30px;
         padding: 35px 0px;
     }
 }
 
+.navbar {
+    position: fixed !important;
+    width: 100%;
+    z-index: 1000;
+}
+
+@media (max-width: 480px){
+    .mapa{
+      width:330px;
+      height:auto;
+    }
+  }
