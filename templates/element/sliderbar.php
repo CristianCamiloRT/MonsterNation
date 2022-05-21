@@ -58,7 +58,7 @@
                 </ul>
             </li>
             <li>
-                <a href="#Exercises" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-star purple_color"></i> <span>Ejercicios</span></a>
+                <a href="#Exercises" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-star yellow_color"></i> <span>Ejercicios</span></a>
                 <ul class="collapse list-unstyled" id="Exercises">
                 <li>
                     <?= $this->Html->link(__('> <span>Lista de Ejercicios</span>'),
@@ -84,7 +84,34 @@
                 </li>
                 </ul>
             </li>
-            <!-- <li><a href="map.html"><i class="fa fa-map purple_color2"></i> <span>Map</span></a></li>
+            <li>
+                <a href="#routines" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-refresh yellow_color"></i> <span>Rutinas</span></a>
+                <ul class="collapse list-unstyled" id="routines">
+                <li>
+                    <?= $this->Html->link(__('> <span>Lista de Rutinas</span>'),
+                        [
+                            'controller' => 'Routines',
+                            'action' => 'index'
+                        ],
+                        [
+                            'escape' => false
+                        ])
+                    ?>
+                </li>
+                <li>
+                    <?= $this->Html->link(__('> <span>Crear Rutina</span>'),
+                        [
+                            'controller' => 'Routines',
+                            'action' => 'add'
+                        ],
+                        [
+                            'escape' => false
+                        ])
+                    ?>
+                </li>
+                </ul>
+            </li>
+            <!-- <li><a href="map.html"><i class="fa fa-map yellow_color2"></i> <span>Map</span></a></li>
             <li><a href="charts.html"><i class="fa fa-bar-chart-o green_color"></i> <span>Charts</span></a></li>
             <li><a href="settings.html"><i class="fa fa-cog yellow_color"></i> <span>Settings</span></a></li> -->
         </ul>

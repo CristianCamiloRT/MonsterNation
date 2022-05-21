@@ -3,35 +3,20 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-/**
- * Routines Controller
- *
- * @property \App\Model\Table\RoutinesTable $Routines
- * @method \App\Model\Entity\Routine[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
- */
 class RoutinesController extends AppController
 {
-    /**
-     * Index method
-     *
-     * @return \Cake\Http\Response|null|void Renders view
-     */
+
     public function index()
     {
+        $this->viewBuilder()->setLayout('dashboard');
         $routines = $this->paginate($this->Routines);
 
         $this->set(compact('routines'));
     }
 
-    /**
-     * View method
-     *
-     * @param string|null $id Routine id.
-     * @return \Cake\Http\Response|null|void Renders view
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
     public function view($id = null)
     {
+        $this->viewBuilder()->setLayout('dashboard');
         $routine = $this->Routines->get($id, [
             'contain' => ['Exercises', 'Users'],
         ]);
@@ -39,69 +24,61 @@ class RoutinesController extends AppController
         $this->set(compact('routine'));
     }
 
-    /**
-     * Add method
-     *
-     * @return \Cake\Http\Response|null|void Redirects on successful add, renders view otherwise.
-     */
     public function add()
     {
+        $this->viewBuilder()->setLayout('dashboard');
         $routine = $this->Routines->newEmptyEntity();
         if ($this->request->is('post')) {
             $routine = $this->Routines->patchEntity($routine, $this->request->getData());
             if ($this->Routines->save($routine)) {
-                $this->Flash->success(__('The routine has been saved.'));
+                $this->Flash->success(__('Rutina creada correctamente.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The routine could not be saved. Please, try again.'));
+            $this->Flash->error(__('Error al crear la rutina. Por favor, inténtelo más tarde.'));
         }
-        $exercises = $this->Routines->Exercises->find('list', ['limit' => 200])->all();
+        $exercises = $this->Routines->Exercises->find('list', [
+            'keyField' => 'id',
+            'valueField' => 'exercise',
+            'limit' => 200
+        ])->all();
         $users = $this->Routines->Users->find('list', ['limit' => 200])->all();
         $this->set(compact('routine', 'exercises', 'users'));
     }
 
-    /**
-     * Edit method
-     *
-     * @param string|null $id Routine id.
-     * @return \Cake\Http\Response|null|void Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
     public function edit($id = null)
     {
+        $this->viewBuilder()->setLayout('dashboard');
         $routine = $this->Routines->get($id, [
             'contain' => ['Exercises', 'Users'],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $routine = $this->Routines->patchEntity($routine, $this->request->getData());
             if ($this->Routines->save($routine)) {
-                $this->Flash->success(__('The routine has been saved.'));
+                $this->Flash->success(__('Rutina modificada correctamente.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The routine could not be saved. Please, try again.'));
+            $this->Flash->error(__('Error al modificar la rutina. Por favor, inténtelo más tarde.'));
         }
-        $exercises = $this->Routines->Exercises->find('list', ['limit' => 200])->all();
+        $exercises = $this->Routines->Exercises->find('list', [
+            'keyField' => 'id',
+            'valueField' => 'exercise',
+            'limit' => 200
+        ])->all();
         $users = $this->Routines->Users->find('list', ['limit' => 200])->all();
         $this->set(compact('routine', 'exercises', 'users'));
     }
 
-    /**
-     * Delete method
-     *
-     * @param string|null $id Routine id.
-     * @return \Cake\Http\Response|null|void Redirects to index.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
     public function delete($id = null)
     {
+        $this->viewBuilder()->setLayout('dashboard');
         $this->request->allowMethod(['post', 'delete']);
         $routine = $this->Routines->get($id);
         if ($this->Routines->delete($routine)) {
-            $this->Flash->success(__('The routine has been deleted.'));
+            $this->Flash->success(__('Rutina eliminada correctamente.'));
         } else {
-            $this->Flash->error(__('The routine could not be deleted. Please, try again.'));
+            $this->Flash->error(__('Error al eliminar la rutina. Por favor, inténtelo más tarde.'));
         }
 
         return $this->redirect(['action' => 'index']);
