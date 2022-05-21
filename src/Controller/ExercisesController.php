@@ -3,35 +3,19 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-/**
- * Exercises Controller
- *
- * @property \App\Model\Table\ExercisesTable $Exercises
- * @method \App\Model\Entity\Exercise[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
- */
 class ExercisesController extends AppController
 {
-    /**
-     * Index method
-     *
-     * @return \Cake\Http\Response|null|void Renders view
-     */
     public function index()
     {
+        $this->viewBuilder()->setLayout('dashboard');
         $exercises = $this->paginate($this->Exercises);
 
         $this->set(compact('exercises'));
     }
 
-    /**
-     * View method
-     *
-     * @param string|null $id Exercise id.
-     * @return \Cake\Http\Response|null|void Renders view
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
     public function view($id = null)
     {
+        $this->viewBuilder()->setLayout('dashboard');
         $exercise = $this->Exercises->get($id, [
             'contain' => ['Routines'],
         ]);
@@ -39,67 +23,95 @@ class ExercisesController extends AppController
         $this->set(compact('exercise'));
     }
 
-    /**
-     * Add method
-     *
-     * @return \Cake\Http\Response|null|void Redirects on successful add, renders view otherwise.
-     */
     public function add()
     {
+        $this->viewBuilder()->setLayout('dashboard');
         $exercise = $this->Exercises->newEmptyEntity();
         if ($this->request->is('post')) {
-            $exercise = $this->Exercises->patchEntity($exercise, $this->request->getData());
+
+            $data = $this->request->getData();
+            $productImage = $this->request->getData("image");
+
+            $hasFileError = $productImage->getError();
+
+            if ($hasFileError > 0) {
+                // no file uploaded
+                $data["image"] = "";
+            } else {
+                // file uploaded
+                $fileName = $productImage->getClientFilename();
+                $fileType = $productImage->getClientMediaType();
+
+                if ($fileType == "image/png" || $fileType == "image/jpeg" || $fileType == "image/jpg") {
+                    $fileName = md5(uniqid(date('d/m/Yh:i:sA'), true)) . $fileName;
+                    $imagePath = WWW_ROOT . "img-exercises/" . $fileName;
+                    $productImage->moveTo($imagePath);
+                    $data["image"] = "img-exercises/" . $fileName;
+                }
+            }
+
+            $exercise = $this->Exercises->patchEntity($exercise, $data);
             if ($this->Exercises->save($exercise)) {
-                $this->Flash->success(__('The exercise has been saved.'));
+                $this->Flash->success(__('Ejercicio creado correctamente.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The exercise could not be saved. Please, try again.'));
+            $this->Flash->error(__('Error al crear el ejercicio. Por favor, inténtelo más tarde.'));
         }
         $routines = $this->Exercises->Routines->find('list', ['limit' => 200])->all();
         $this->set(compact('exercise', 'routines'));
     }
 
-    /**
-     * Edit method
-     *
-     * @param string|null $id Exercise id.
-     * @return \Cake\Http\Response|null|void Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
     public function edit($id = null)
     {
+        $this->viewBuilder()->setLayout('dashboard');
         $exercise = $this->Exercises->get($id, [
             'contain' => ['Routines'],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $exercise = $this->Exercises->patchEntity($exercise, $this->request->getData());
+            
+            $data = $this->request->getData();
+            $productImage = $this->request->getData("image");
+
+            $hasFileError = $productImage->getError();
+
+            if ($hasFileError > 0) {
+                // no file uploaded
+                $data["image"] = "";
+            } else {
+                // file uploaded
+                $fileName = $productImage->getClientFilename();
+                $fileType = $productImage->getClientMediaType();
+
+                if ($fileType == "image/png" || $fileType == "image/jpeg" || $fileType == "image/jpg") {
+                    $fileName = md5(uniqid(date('d/m/Yh:i:sA'), true)) . $fileName;
+                    $imagePath = WWW_ROOT . "img-exercises/" . $fileName;
+                    $productImage->moveTo($imagePath);
+                    $data["image"] = "img-exercises/" . $fileName;
+                }
+            }
+
+            $exercise = $this->Exercises->patchEntity($exercise, $data);
             if ($this->Exercises->save($exercise)) {
-                $this->Flash->success(__('The exercise has been saved.'));
+                $this->Flash->success(__('Ejercicio modificado correctamente.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The exercise could not be saved. Please, try again.'));
+            $this->Flash->error(__('Error al modificar el ejercicio. Por favor, inténtelo más tarde.'));
         }
         $routines = $this->Exercises->Routines->find('list', ['limit' => 200])->all();
         $this->set(compact('exercise', 'routines'));
     }
 
-    /**
-     * Delete method
-     *
-     * @param string|null $id Exercise id.
-     * @return \Cake\Http\Response|null|void Redirects to index.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
     public function delete($id = null)
     {
+        $this->viewBuilder()->setLayout('dashboard');
         $this->request->allowMethod(['post', 'delete']);
         $exercise = $this->Exercises->get($id);
         if ($this->Exercises->delete($exercise)) {
-            $this->Flash->success(__('The exercise has been deleted.'));
+            $this->Flash->success(__('Ejercicio eliminado correctamente.'));
         } else {
-            $this->Flash->error(__('The exercise could not be deleted. Please, try again.'));
+            $this->Flash->error(__('Error al eliminar el ejercicio. Por favor, inténtelo más tarde.'));
         }
 
         return $this->redirect(['action' => 'index']);

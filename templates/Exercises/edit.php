@@ -1,36 +1,57 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\Exercise $exercise
- * @var string[]|\Cake\Collection\CollectionInterface $routines
- */
-?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $exercise->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $exercise->id), 'class' => 'side-nav-item']
-            ) ?>
-            <?= $this->Html->link(__('List Exercises'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+<div class="row column_title">
+    <div class="col-md-12">
+        <div class="page_title">
+            <h2><?= __('Editar Ejercicio') ?></h2>
         </div>
-    </aside>
-    <div class="column-responsive column-80">
-        <div class="exercises form content">
-            <?= $this->Form->create($exercise) ?>
-            <fieldset>
-                <legend><?= __('Edit Exercise') ?></legend>
-                <?php
-                    echo $this->Form->control('exercise');
-                    echo $this->Form->control('description');
-                    echo $this->Form->control('image');
-                    echo $this->Form->control('routines._ids', ['options' => $routines]);
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
+    </div>
+</div>
+<?= $this->Flash->render() ?>
+<div class="row">
+    <div class="col-md-12">
+        <div class="white_shd full margin_bottom_30">
+            <div class="table_section padding_infor_info login_form">
+                <?= $this->Form->create($exercise, ["enctype" => "multipart/form-data"]) ?>
+                    <div class="row">
+                        <div class="col-md-12 mb-2">
+                            <div class="field">
+                                <?=
+                                    $this->Form->control('exercise', [
+                                        'class' => 'float-ini w-100',
+                                        'placeholder' => 'Nombre del Ejercicio',
+                                        'label' => ''
+                                    ]);
+                                ?>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-4 mb-4">
+                            <div class="field">
+                                <?=
+                                    $this->Form->control('description', [
+                                        'class' => 'float-ini w-100',
+                                        'placeholder' => 'Descripción del Ejercicio',
+                                        'label' => ''
+                                    ]);
+                                    ?>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mb-5">
+                            <div class="">
+                                <?=
+                                    $this->Form->control('image', [
+                                        'class' => 'float-ini w-100',
+                                        'type' => 'file',
+                                        'placeholder' => 'Url Imagen',
+                                        'label' => ''
+                                    ]);
+                                ?>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <?= $this->Form->button(__('Crear'), ['class' => 'main_bt']) ?>
+                        </div>
+                    </div>
+                <?= $this->Form->end() ?>
+            </div>
         </div>
     </div>
 </div>
