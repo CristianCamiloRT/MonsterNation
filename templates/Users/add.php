@@ -88,6 +88,17 @@
                                 ?>
                             </div>
                         </div>
+                        <div class="col-md-12 mb-5">
+                            <div class="">
+                                <?=
+                                    $this->Form->control('routines._ids', [
+                                        'class' => 'float-ini w-100',
+                                        'placeholder' => 'Rutina',
+                                        'label' => ''
+                                    ]);
+                                ?>
+                            </div>
+                        </div>
                         <div class="col-12 d-flex justify-content-center">
                             <?= $this->Form->button(__('Crear'), ['class' => 'main_bt']) ?>
                         </div>

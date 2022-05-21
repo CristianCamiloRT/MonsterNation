@@ -46,8 +46,14 @@ class UsersController extends AppController
                 'limit' => 200
             ]
         )->all();
-        // $routines = $this->Users->Routines->find('list', ['limit' => 200])->all();
-        $this->set(compact('user', 'roles'));
+        $routines = $this->Users->Routines->find('list', 
+            [
+                'keyField' => 'id',
+                'valueField' => 'routine',
+                'limit' => 200
+            ]
+        )->all();
+        $this->set(compact('user', 'roles', 'routines'));
     }
 
     public function edit($id = null)
@@ -72,7 +78,14 @@ class UsersController extends AppController
                 'limit' => 200
             ]
         )->all();
-        $this->set(compact('user', 'roles'));
+        $routines = $this->Users->Routines->find('list', 
+        [
+            'keyField' => 'id',
+            'valueField' => 'routine',
+            'limit' => 200
+        ]
+    )->all();
+        $this->set(compact('user', 'roles', 'routines'));
     }
 
     public function delete($id = null)
